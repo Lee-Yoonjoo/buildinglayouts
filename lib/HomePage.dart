@@ -91,17 +91,15 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Flexible(
-                    child: ToDoList(
-                      toDos: [
-                        ToDo(name: 'Introduction to widgets'),
-                        ToDo(name: 'Building layouts'),
-                        ToDo(name: 'Navigation & routing'),
-                        ToDo(name: 'Animations'),
-                        ToDo(name: 'Advanced UI'),
-
-                      ],
+                    child: ListView.builder(
+                      itemCount: 15,
+                      physics : NeverScrollableScrollPhysics(),
+                      shrinkWrap : true,
+                      itemBuilder: (context, index)=> ListTile(
+                        title : Text("Row $index"),
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
